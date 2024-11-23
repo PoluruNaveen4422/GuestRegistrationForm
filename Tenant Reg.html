@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenant Registration Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet">
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>-->
+    
+    <!-- jQuery (required for Datepicker)-->
+    <!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
+
+     <!--Bootstrap Datepicker JS-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@eonasdan/tempus-dominus@6.0.0-beta2/dist/js/tempus-dominus.min.js"></script>-->
+
+
+</head>
+<style>
+    h6,span{
+        color: red;
+    }
+    h3{
+        text-align: center;
+        color: blue;
+       
+    }  
+    #updatedon,#createdby,#countrycode{
+        display: none;
+    }
+    .cont ,h4 ,p ,li{
+        text-align: center;
+        list-style-type: none;
+    }
+    .cont li:hover{
+        color: rgb(243, 46, 16);
+    }
+    .cont h4{
+        color:rgb(18, 225, 32);
+    }
+    
+    
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    body{
+        background-image: url("https://img.freepik.com/free-photo/pastel-blue-vignette-concrete-textured-background_53876-102637.jpg?size=626&ext=jpg ");
+        background-size: cover;      /* Ensures the image covers the entire background */
+        background-position: center; /* Centers the background image */
+        background-repeat: no-repeat; /* Prevents the image from repeating */
+        background-attachment: fixed;
+        font-weight: 600;
+        font-size: large;
+        
+
+
+    }
+    
+
+    @media (max-width: 768px) { /* For tablets and smaller devices */
+      body {
+        background-attachment: fixed; /* Allows scrolling on smaller screens */
+        background-size: cover; 
+      }
+      #updatedon,#createdby{
+        display: none;
+    }
+    #countrycode{
+        display: none;
+    }
+    
+    }
+</style>
+<body>
+    <h3 class="my-3">Tenant Registration Form</h3>
+    <!--<div class="cont container">
+        <h4>Looking For a Rooms in Hyderabad | We will Help U </h4>
+        <p>We have Fully Furnished Flats in Different Locations  </p>
+        <p>Like</p>
+        <ol>
+            <li>Kondapur</li>
+            <li>Hitech City</li>
+            <li>Gachibowli</li>
+            <li>Financial District</li>
+    
+        </ol>
+        </div>-->
+    <div class="container">
+    <form name="form"  method="post"  action="http://anyrent.shaikhomes.com/api/Tenant">
+    <div class=" mb-3">
+        <label for="Name">Name</label>
+        <input
+            type="text"
+            class="form-control"
+            name="Name"
+            id="Name"
+            placeholder="Enter Your Name here"
+            required
+        />
+        <hr/>
+    </div>
+    
+    <div class="row">
+        <!--<div class="col-md-1">
+            <div class="form-floating mb-3 contry">
+                <input
+                    type="text"
+                    class="form-control"
+                    class="fixed-input"
+                    name="countrycode"
+                    id="countrycode"
+                    placeholder="+91"
+                    disabled
+                />
+                <label for="countrycode">+91</label>
+            </div>
+        </div>-->
+
+    <input id="countrycode" type="none" name="countrycode">
+
+    <div class="col-md-12">
+        
+    <div class=" mb-3">
+        <label for="MobileNo">Contact No.</label>
+        <input
+            type="text"
+            class="form-control"
+            name="MobileNo"
+            id="MobileNo"
+            pattern="\d{10}" maxlength="10"  required
+            placeholder="Enter your Mobile Number"
+        />
+        <h6>Enter 10 Digits Mobile Number.<span>*</span></h6>
+        <hr/>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    <div class="container">
+    <div class="mb-3 ">
+        <label for="mailid" class="form-label">Mail-Id </label>
+        <input
+            type="text"
+            class="form-control"
+            name="mailid"
+            id="mailid"
+            required
+            placeholder="Enter your Mail-Id "
+        /><hr/>
+        </div>
+    </div>
+    
+    <div class="container">
+    <div class="mb-3 ">
+        <label for="apartmentId" class="form-label">Apartment Number</label>
+        <input
+            type="text"
+            class="form-control"
+            name="apartmentId"
+            id="apartmentId"
+            required
+            placeholder="Enter your Apartment Number"
+        />  
+        <hr/>
+        </div>
+    </div>
+    
+    <div class="container">
+    <div class="mb-3 ">
+        <label for="floorno" class="form-label">Floor Number </label>
+        <input
+            type="text"
+            class="form-control"
+            name="floorno"
+            id="floorno"
+            required
+            placeholder="Enter your Floor Number "
+        />
+        <hr/>
+    </div>
+    </div>
+    
+    <div class="container">
+    <div class="mb-3 ">
+        <label for="roomno" class="form-label">Room Number </label>
+        <input
+            type="text"
+            class="form-control"
+            name="roomno"
+            id="roomno"
+            required
+            placeholder="Enter your Room Number "
+        />
+        <hr/>
+    </div>
+    </div>
+    
+    
+    <div class="container">
+        <div class="mb-3 ">
+            <label for="Gender" class="form-label">Gender </label>
+            <input
+                type="text"
+                class="form-control"
+                name="Gender"
+                id="Gender"
+                required
+                placeholder="Enter your Gender "
+            />
+            <hr/>
+        </div>
+        </div>
+        
+    <div class="container">
+        <div class="mb-3 ">
+            <label for="Profession" class="form-label">Profession </label>
+            <input
+                type="text"
+                class="form-control"
+                name="Profession"
+                id="Profession"
+                required
+                placeholder="Enter your Profession"
+            />
+            <hr/>
+        </div>
+        </div>
+        
+    <div class="container">
+        <div class="mb-3 ">
+            <label for="rent" class="form-label">Rent Amount</label>
+            <input
+                type="number"
+                class="form-control"
+                name="rent"
+                id="rent"
+                required
+                placeholder="Enter your Rent"
+            />
+            <hr/>
+        </div>
+        </div>
+        
+    <div class="container">
+        <div class="mb-3 ">
+            <label for="paymentmode" class="form-label">Payment Mode</label>
+            <input
+                type="text"
+                class="form-control"
+                name="paymentmode"
+                id="paymentmode"
+                required
+                placeholder="Enter your Payment Mode"
+            />
+            <hr/>
+        </div>
+        </div>
+        
+        <div class="container">
+            <div class="mb-3 ">
+                <label for="securitydeposit" class="form-label">Security Deposit Amount</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    name="securitydeposit"
+                    id="securitydeposit"
+                    required
+                    placeholder="Enter your Security Deposit Amount"
+                />
+                <hr/>
+            </div>
+            </div>
+            
+
+    <!--<div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-3">
+            
+                        <label for="minamount" class="form-label">Minimum Budget</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="minamount"
+                            id="minamount"
+                           required
+                            placeholder="Enter your Minimum Budget"
+                        />
+                        
+                
+                    
+                    
+                </div>
+
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="maxamount" class="form-label">Maximum Budget</label>
+                    <div class="mb-3">
+                        <label for="maxamount" class="form-label">Maximum Budget</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="maxamount"
+                            id="maxamount"
+                           required
+                            placeholder="Enter your Maximum Budget"
+                        />
+                        
+                    </div>
+                    
+                    
+
+            </div>
+        </div>
+    </div>-->
+
+    <div class="container">
+        <div class="mb-3">
+            <label for="joinedon" class="form-label">Joinedon Date</label>
+            <input
+                type="text"
+                class="form-control"
+                name="joinedon"
+                id="joinedon"
+                
+                placeholder="Enter Date Formate YYYY-MM-DD HH:MM:SS"
+            />
+            <hr/>
+        </div>
+        
+    </div>
+    
+    <div class="container">
+        <div class="mb-3">
+            <label for="ProofImageF" class="form-label">Upload Front side of Your Id Proof</label>
+            <input
+                type="file"
+                class="form-control"
+                name="ProofImageF"
+                id="ProofImageF"
+                required
+                
+            />
+            <hr/>
+        </div>   
+    </div>
+    
+    <div class="container">
+        <div class="mb-3">
+            <label for="ProofImageB" class="form-label">Upload Back side of Your Id Proof</label>
+            <input
+                type="file"
+                class="form-control"
+                name="ProofImageB"
+                id="ProofImageB"
+                required
+               
+            />
+            <hr/>
+        </div>
+        
+    </div>
+    
+    
+    <input type="hidden" name="date">
+    <input type="hidden" name="updatedon">
+    <input type="hidden" name="createdby">
+
+
+    <input id="createdby"type="hidden"  name="source=website">
+    <input id="updatedon" type="hidden" name="updatedon">
+    <div class="container d-flex justify-content-center">
+    <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+    </form>
+    </div>
+
+    <script>
+        // Initialize Datepicker with a specific format
+        /*$('#date').datepicker({
+            format: 'yyyy-mm-dd',  // Example format (MM/DD/YYYY)
+            autoclose: true,
+            todayHighlight: true
+        });*/
+        /*
+        // Initialize Flatpickr for datetime input
+        flatpickr("#date", {
+            enableTime: true,
+            dateFormat: "Y-m-d H:i:s", // Custom date and time format: dd-mm-yyyy HH:mm
+            time_24hr: true,
+        });
+        */
+        /*conf={
+            enableTime: true,
+            dateFormat: "Y-m-d H-i",
+        }
+        flatpickr("input[type=datetime-local]", conf);
+        */
+        /*new tempusDominus.TempusDominus(document.getElementById('date'), {
+            display: {
+                components: {
+                    calendar: true,
+                    date: true,
+                    month: true,
+                    year: true,
+                    clock: true,
+                    hours: true,
+                    minutes: true,
+                    seconds: true
+                }
+            },
+            localization: {
+                format: 'YYYY-MM-DD hh:mm:ss' // Custom date and time format (12-hour format with AM/PM)
+            }
+        });*/
+    </script>
+
+
+
+    <!--<script>
+        let form = document.querySelector("form");
+        form.addEventListener('submit',handleSubmit);
+
+        function handleSubmit(event){
+            event.preventDefault();
+            let formData = new FormData(form);
+            let data = Object.fromEntries(formData);
+            let jsonData = JSON.stringify(data);
+
+            fetch("https://smartdiary.shaikhomes.com/api/Leads",{
+                method: "POST",
+                headers: {
+                    "Content-Type": 'application/json'
+                },
+                body: jsonData
+            }).then(res =>res.json())
+            .then(result => console.log(result))
+            .catch(err => console.log(err))
+
+        }
+    </script>-->
+
+</body>
+</html>
